@@ -5,14 +5,14 @@
 
 makeCacheMatrix <- function(x = matrix()) {
         m <- NULL
-        set <- function(y) {
+        set <- function(y) { #Assign the input argument to the x object in the parent environment
         x <<- y
-        m <<- NULL
+        m <<- NULL           #Assign the value of NULL to the m object in the parent environment. This line of code clears any value of m that had been cached by a prior execution of cachemean().
         }
         get <- function() x
         setsolve <- function(inverse) m <<- inverse
         getsolve <- function() m
-        list(set = set, get = get, setsolve = setsolve, getsolve = getsolve)
+        list(set = set, get = get, setsolve = setsolve, getsolve = getsolve)  # gives the name 'set' to the set() function defined above
 
 }
 
